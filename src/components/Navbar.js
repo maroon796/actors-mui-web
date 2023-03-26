@@ -1,5 +1,17 @@
 import { TheaterComedy, Mail, CircleNotifications } from '@mui/icons-material';
-import { AppBar, styled, Toolbar, Typography, Box, InputBase, Badge, Avatar } from '@mui/material';
+import {
+  AppBar,
+  styled,
+  Toolbar,
+  Typography,
+  Box,
+  InputBase,
+  Badge,
+  Avatar,
+  Menu,
+  MenuItem,
+} from '@mui/material';
+import { useState } from 'react';
 
 const StyledToolbar = styled(Toolbar)({
   display: 'flex',
@@ -14,12 +26,25 @@ const Search = styled('div')(({ theme }) => ({
 }));
 
 const Icons = styled(Box)(({ theme }) => ({
-  display: 'flex',
+  display: 'none',
   gap: '15px',
   alignItems: 'center',
+  [theme.breakpoints.up('sm')]: {
+    display: 'flex',
+  },
+}));
+
+const UserBox = styled(Box)(({ theme }) => ({
+  display: 'none',
+  gap: '10px',
+  alignItems: 'center',
+  [theme.breakpoints.down('sm')]: {
+    display: 'flex',
+  },
 }));
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
   return (
     <AppBar position="sticky">
       <StyledToolbar>
@@ -42,9 +67,36 @@ const Navbar = () => {
           <Avatar
             src="https://i.pinimg.com/originals/d4/15/95/d415956c03d9ca8783bfb3c5cc984dde.jpg"
             sx={{ width: 30, height: 30 }}
+            onClick={() => setOpen(true)}
           />
         </Icons>
+        <UserBox onClick={() => setOpen(true)}>
+          <Avatar
+            src="https://i.pinimg.com/originals/d4/15/95/d415956c03d9ca8783bfb3c5cc984dde.jpg"
+            sx={{ width: 30, height: 30 }}
+          />
+          <Typography variant="span" color="white">
+            Mike
+          </Typography>
+        </UserBox>
       </StyledToolbar>
+      <Menu
+        id="demo-positioned-menu"
+        aria-labelledby="demo-positioned-button"
+        open={open}
+        onClose={() => setOpen(false)}
+        anchorOrigin={{
+          vertical: 'top',
+          horizontal: 'right',
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'right',
+        }}>
+        <MenuItem>Profile</MenuItem>
+        <MenuItem>My account</MenuItem>
+        <MenuItem>Logout</MenuItem>
+      </Menu>
     </AppBar>
   );
 };

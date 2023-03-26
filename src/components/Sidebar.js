@@ -1,5 +1,11 @@
+import { Box } from '@mui/material';
+
 const Sidebar = () => {
-  return <div></div>;
+  return (
+    <Box bgcolor="royalblue" flex={1} p={2}>
+      Sidebar
+    </Box>
+  );
 };
 
 export default Sidebar;

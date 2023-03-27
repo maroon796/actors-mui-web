@@ -25,7 +25,7 @@ const Feed = () => {
       <Post
         src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Daniel_Day-Lewis%2C_Jaguar%2C_Mille_Miglia_2013_cropped.jpg"
         desc="An English retired actor. Often described as one of the preeminent actors of his generation, he received numerous accolades throughout his career which spanned over four decades, including three Academy Awards for Best Actor, making him the first and only actor to have three wins in that category, and the third male actor to win three competitive Academy Awards for acting, the sixth performer overall."
-        title="Daniel Day-Lewi"
+        title="Daniel Day-Lewis"
       />
     </Box>
   );

@@ -1,7 +1,6 @@
 import { Favorite, FavoriteBorder, MoreVert, Share } from '@mui/icons-material';
 import {
   Avatar,
-  Box,
   Card,
   CardActions,
   CardContent,
